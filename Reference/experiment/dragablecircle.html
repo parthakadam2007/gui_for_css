@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mydiv {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body onload="move('mydiv')">
+    <div id="mydiv" class="mydiv"></div>
+    <script>
+      var dragValue;
+
+      function move(id) {
+        var element = document.getElementById('mydiv');
+        console.log(element);
+        element.style.position = "absolute";
+        element.onmousedown = function () {
+        dragValue = element;
+        console.log(dragValue);
+        };
+      }
+
+      document.onmousemove = function (e) {
+        // dragValue.onmousedown = function () {
+        //   dragValue.style.cursur= "move"
+        // }
+        var x = e.pageX;
+        var y = e.pageY;
+console.log(x,y)
+        dragValue.style.left = x + "px";
+        dragValue.style.top = y + "px";
+      };
+    </script>
+  </body>
+</html>
