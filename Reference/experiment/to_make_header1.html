@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Styling Tool</title>
+  <style>
+
+    
+   
+  </style>
+  <link rel="stylesheet" href="to_css.css">
+</head>
+<body>
+  <h1>CSS Styling Tool</h1>
+
+  <form id="css-form">
+    <div class="form-group">
+      <label for="background-color">Background Color</label>
+      <input type="color" id="background-color" name="background-color" value="#ffffff" class="inputpalet">
+    </div>
+
+    <div class="form-group">
+      <label for="text-color">Text Color</label>
+      <input type="color" id="text-color" name="text-color" value="#000000" class="inputpalet">
+    </div>
+
+    <div class="form-group">
+      <label for="font-size">Font Size (px)</label>
+      <input type="number" id="font-size" name="font-size" value="16"onclick="updatePreview()" class="inputnumber">
+    </div>
+    <div class="form-group">
+        <label for="margin-size">margin (px)</label>
+        <input type="number" id="margin-size" name="font-size" value="16"onclick="updatePreview() "class="inputnumber">
+      </div>
+      <div class="form-group">
+        <label for="padding-size">padding (px)</label>
+        <input type="number" id="padding-size" name="font-size" value="16"onclick="updatePreview() "class="inputnumber">
+      </div>
+    <button type="button" onclick="updatePreview()">Update Preview</button>
+    <button type="button" onclick="exportCSS()">Export CSS</button>
+    <label for="cars"></label>
+
+    <form>
+        <label for="fonts">Choose a font style:</label>
+        <select name="fonts" id="fontslist" value="arial">
+          <option value="arial" class="fontlist">Arial</option>
+          <option value="verdana" class="fontlist">Verdana</option>
+          <option value="tahoma" class="fontlist">Tahoma</option>
+          <option value="times" class="fontlist">Times New Roman</option>
+          <option value="courier" class="fontlist">Courier New</option>
+          <option value="georgia" class="fontlist">Georgia</option>
+          <option value="palatino" class="fontlist">Palatino</option>
+          <option value="garamond" class="fontlist">Garamond</option>
+          <option value="comic" class="fontlist">Comic Sans MS</option>
+          <option value="impact" class="fontlist">Impact</option>
+          <option value="helvetica" class="fontlist">Helvetica</option>
+          <option value="calibri" class="fontlist">Calibri</option>
+          <option value="cambria" class="fontlist">Cambria</option>
+          <option value="candara" class="fontlist">Candara</option>
+          <option value="lucida" class="fontlist">Lucida Sans</option>
+          <option value="bookman" class="fontlist">Bookman</option>
+          <option value="trebuchet" class="fontlist">Trebuchet MS</option>
+          <option value="optima" class="fontlist">Optima</option>
+          <option value="monaco" class="fontlist">Monaco</option>
+          <option value="futura" class="fontlist">Futura</option>
+        </select>
+      </form>
+      
+ 
+<div id="canvas"> <div id="preview">text</div></div>
+  <div id="css-output"></div>
+  <canvas id="myCanvas" width="200" height="100"></canvas>
+  <script src="to_js.js"></script>
+  <script>
+
+  </script>
+  <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+    </script>
+</body>
+</html>
