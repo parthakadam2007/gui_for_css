@@ -1,4 +1,4 @@
-body {
+ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 20px;
@@ -20,14 +20,20 @@ body {
   }
 
   #preview {
-    margin-top: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 16px;
-    text-align: center;
+    /* default changing */
+
+    outline: 0px solid transparent;
+
+
+/* design changing */
+margin-top: 20px;
+padding: 20px;
+box-sizing: border-box;
+border: 1px solid #ccc;
+background-color: #ffffff;
+color: #000000;
+font-size: 16px;
+text-align: center;
   }
 
   #css-output {
@@ -53,13 +59,17 @@ body {
       padding: 0%;
       /* border-radius: 50%; */
       /* border-width:0 ; */
+     
   }
+
+
 #canvas{
-width: 100%;
-background-color: aqua;
+width: 500px;
 height: 20rem;
 display: flex;
 align-items: center;
-background-image:'' ;
 justify-content: center;
+background-image:url('/Reference/experiment/assect/images.png') ;
+
+
 }

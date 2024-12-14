@@ -1,17 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Styling Tool</title>
+  <style>
+
+    
+   
+  </style>
+  <link rel="stylesheet" href="to_css.css">
 </head>
 <body>
+  <h1>CSS Styling Tool</h1>
 
-    <header class="header">header</header>
-<button class="btn" id="btn1" onclick="header=document.getElementsByClassName('header')[0] ;
-header.innerHTML+='<h1>partha</h1>'">btn1</button>
-<button class="btn2">btn2</button>
-    <script src="index.js"></script>
+  <form id="css-form">
+    <div class="form-group">
+      <label for="background-color">Background Color</label>
+      <input type="color" id="background-color" name="background-color" value="#ffffff" class="inputpalet">
+    </div>
+
+    <div class="form-group">
+      <label for="text-color">Text Color</label>
+      <input type="color" id="text-color" name="text-color" value="#000000" class="inputpalet">
+    </div>
+
+    <div class="form-group">
+      <label for="font-size">Font Size (px)</label>
+      <input type="number" id="font-size" name="font-size" value="16"onclick="updatePreview()" class="inputnumber">
+    </div>
+    <div class="form-group">
+      <label for="border-color">Border Color</label>
+      <input type="color" id="border-color" name="border-color" value="#000000" class="inputpalet">
+    </div>
+
+    <div class="form-group">
+      <label for="border-width">Border Width (px)</label>
+      <input type="number" id="border-width" name="border-width" value="1" class="inputnumber">
+    </div>
+
+    <div class="form-group">
+      <label for="border-style">Border Style</label>
+      <select id="border-style" name="border-style">
+        <option value="solid">Solid</option>
+        <option value="dashed">Dashed</option>
+        <option value="dotted">Dotted</option>
+        <option value="double">Double</option>
+        <option value="groove">Groove</option>
+        <option value="ridge">Ridge</option>
+        <option value="inset">Inset</option>
+        <option value="outset">Outset</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="borderRadius">border radius(%)</label>
+      <input type="range" min="0" max="100" id="borderRadius" name="borderRadius" value="0"onclick="updatePreview()" >
+      
+    </div>
+
+    <div class="form-group">
+        <label for="margin-size">margin (px)</label>
+        <input type="number" id="margin-size" name="font-size" value="16"onclick="updatePreview() "class="inputnumber">
+      
+         <input type="checkbox" id="margin-visible">
+      </div>
+
+
+      <div class="form-group">
+        <label for="padding-size">padding (px)</label>
+        <input type="number" id="padding-size" name="padding-size" value="16"onclick="updatePreview() "class="inputnumber">
+      </div>
+
+      <div class="form-group">
+        <label for="height-size">height (px)</label>
+        <input type="number" id="height-size" name="height-size" value="50"onclick="updatePreview() "class="inputnumber">
+      </div>
+
+      <div class="form-group">
+        <label for="width-size">width (px)</label>
+        <input type="number" id="width-size" name="width-size" value="100"onclick="updatePreview() "class="inputnumber">
+      </div>
+
+    <button type="button" onclick="updatePreview()">Update Preview</button>
+    <button type="button" onclick="exportCSS()">Export CSS</button>
+    <label for="cars"></label>
+
+    <form>
+        <label for="fonts">Choose a font style:</label>
+        <select name="fonts" id="fontslist" value="arial">
+          <option value="arial" class="fontlist">Arial</option>
+          <option value="verdana" class="fontlist">Verdana</option>
+          <option value="tahoma" class="fontlist">Tahoma</option>
+          <option value="times" class="fontlist">Times New Roman</option>
+          <option value="courier" class="fontlist">Courier New</option>
+          <option value="georgia" class="fontlist">Georgia</option>
+          <option value="palatino" class="fontlist">Palatino</option>
+          <option value="garamond" class="fontlist">Garamond</option>
+          <option value="comic" class="fontlist">Comic Sans MS</option>
+          <option value="impact" class="fontlist">Impact</option>
+          <option value="helvetica" class="fontlist">Helvetica</option>
+          <option value="calibri" class="fontlist">Calibri</option>
+          <option value="cambria" class="fontlist">Cambria</option>
+          <option value="candara" class="fontlist">Candara</option>
+          <option value="lucida" class="fontlist">Lucida Sans</option>
+          <option value="bookman" class="fontlist">Bookman</option>
+          <option value="trebuchet" class="fontlist">Trebuchet MS</option>
+          <option value="optima" class="fontlist">Optima</option>
+          <option value="monaco" class="fontlist">Monaco</option>
+          <option value="futura" class="fontlist">Futura</option>
+        </select>
+      </form>
+      
+ 
+<div id="canvas"> <div id="preview" contenteditable="true">text</div></div>
+<div id = copy_container>
+    <button onclick="copyToClipBoard()">
+        <span>Copy to clipboard</span>
+    </button>
+  <div id="css-output"></div>
+</div>
+  <script src="to_js.js"></script>
 </body>
 </html>
