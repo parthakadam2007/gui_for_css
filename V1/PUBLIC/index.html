@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>CSS Styling Tool</title>
   <style>
 
@@ -10,83 +14,96 @@
    
   </style>
   <link rel="stylesheet" href="to_css.css">
+  <link rel="stylesheet" href="style.css">
+
+  
 </head>
 <body>
-  <h1>CSS Styling Tool</h1>
 
-  <form id="css-form">
-    <div class="form-group">
-      <label for="background-color">Background Color</label>
-      <input type="color" id="background-color" name="background-color" value="#ffffff" class="inputpalet">
-    </div>
 
-    <div class="form-group">
-      <label for="text-color">Text Color</label>
-      <input type="color" id="text-color" name="text-color" value="#000000" class="inputpalet">
-    </div>
+  
 
-    <div class="form-group">
-      <label for="font-size">Font Size (px)</label>
-      <input type="number" id="font-size" name="font-size" value="16"onclick="updatePreview()" class="inputnumber">
-    </div>
-    <div class="form-group">
-      <label for="border-color">Border Color</label>
-      <input type="color" id="border-color" name="border-color" value="#000000" class="inputpalet">
-    </div>
+<!-- <div class="option-family">
+  <div class="option-family-head">option-famity-head </div>
+  <div class="option-family-head-style-group">
+    <div class="option-family-head-style" style="flex-grow: 1">option-famity-head-styl</div>
+    <div class="option-family-head-style" style="flex-grow: 1">option-famity-head-styl</div>
+</div>
+    <div class="option-family-head-style">option-famity-head-style</div>
+    <div class="option-family-head-style">option-famity-head-style</div>
+ 
+</div> -->
 
-    <div class="form-group">
-      <label for="border-width">Border Width (px)</label>
-      <input type="number" id="border-width" name="border-width" value="1" class="inputnumber">
-    </div>
+  <div class="header">
+   <img id="logo-image" src="./assets/gui_CSS_transparent-.png" alt="" height="50px">
+  
+    <button type="button" id="export-css"class="button-85"onclick="exportCSS()"><i class="fa fa-download" ></i> Export CSS</button>
 
-    <div class="form-group">
-      <label for="border-style">Border Style</label>
-      <select id="border-style" name="border-style">
-        <option value="solid">Solid</option>
-        <option value="dashed">Dashed</option>
-        <option value="dotted">Dotted</option>
-        <option value="double">Double</option>
-        <option value="groove">Groove</option>
-        <option value="ridge">Ridge</option>
-        <option value="inset">Inset</option>
-        <option value="outset">Outset</option>
-      </select>
-    </div>
+  </div>
 
-    <div class="form-group">
-      <label for="borderRadius">border radius(%)</label>
-      <input type="range" min="0" max="100" id="borderRadius" name="borderRadius" value="0"onclick="updatePreview()" >
-      
-    </div>
+  <div id="master-container">
+    <!-- PANEL_APP -->
+    <div class="panel-app"style="flex-grow: 8" style="user-select: none" >
 
-    <div class="form-group">
-        <label for="margin-size">margin (px)</label>
-        <input type="number" id="margin-size" name="font-size" value="16"onclick="updatePreview() "class="inputnumber">
-      
-         <input type="checkbox" id="margin-visible">
+      <div class="option-family">
+        <div class="option-family-head">Element property </div>
+      <div class="option-family-head-style-group">
+          <div class="option-family-head-style">
+            <div class="form-group">
+            <label for="height-size">height (px)</label>
+            <input type="number" id="height-size" name="height-size" value="5"onclick="updatePreview() "class="inputnumber">
+          </div>
+
+
+          </div>
+          <div class="option-family-head-style">          <div class="form-group">
+            <label for="width-size">width (px)</label>
+            <input type="number" id="width-size" name="width-size" value="10"onclick="updatePreview() "class="inputnumber">
+          </div>
+  </div>
       </div>
 
+         <div class="option-family-head-style-group">
+    <div class="option-family-head-style" style="flex-grow: 1">
+         <div class="form-group">
+  <label for="margin-size">margin (px)</label>
+  <input type="number" id="margin-size" name="font-size" value="16"onclick="updatePreview() "class="inputnumber">
 
+
+
+          </div>
+    </div>
+    <div class="option-family-head-style" style="flex-grow: 1">
+          
       <div class="form-group">
         <label for="padding-size">padding (px)</label>
         <input type="number" id="padding-size" name="padding-size" value="16"onclick="updatePreview() "class="inputnumber">
       </div>
 
-      <div class="form-group">
-        <label for="height-size">height (px)</label>
-        <input type="number" id="height-size" name="height-size" value="50"onclick="updatePreview() "class="inputnumber">
+
+    </div>
+</div>
+<div class="option-family-head-style">      <form id="css-form">
+  <div class="form-group">
+   <label for="background-color">Background Color</label>
+    <span><input type="color" id="background-color" name="background-color" value="#ffffff" class="inputpalet"></span>
+  </div></div>
       </div>
-
+      <!-- END ELEMENT PROPERTY -->
+      
+<!-- Text PROPERTY -->
+<div class="option-family">
+  <div class="option-family-head">Text property</div>
+  <div class="option-family-head-style-group">
+    <div class="option-family-head-style" style="flex-grow: 1">
       <div class="form-group">
-        <label for="width-size">width (px)</label>
-        <input type="number" id="width-size" name="width-size" value="100"onclick="updatePreview() "class="inputnumber">
+        <label for="font-size">Font Size (px)</label>
+        <input type="number" id="font-size" name="font-size" value="16"onclick="updatePreview()" class="inputnumber">
       </div>
-
-    <button type="button" onclick="updatePreview()">Update Preview</button>
-    <button type="button" onclick="exportCSS()">Export CSS</button>
-    <label for="cars"></label>
-
-    <form>
+      
+    </div>
+    <div class="option-family-head-style" style="flex-grow: 1">
+      <form>
         <label for="fonts">Choose a font style:</label>
         <select name="fonts" id="fontslist" value="arial">
           <option value="arial" class="fontlist">Arial</option>
@@ -111,15 +128,107 @@
           <option value="futura" class="fontlist">Futura</option>
         </select>
       </form>
+
+    </div>
+</div>
+    <div class="option-family-head-style">
+      <div class="form-group">
+        <label for="text-color">Text Color</label>
+        <input type="color" id="text-color" name="text-color" value="#000000" class="inputpalet">
+      </div>
+
+    </div>
+
+ 
+</div>
+    <!-- BORDER -->
+    <div class="option-family">
+      <div class="option-family-head">Border property </div>
+      <div class="option-family-head-style-group">
+        <div class="option-family-head-style" style="flex-grow: 1"> 
+         <div class="form-group">
+          <label for="border-width">Border Width (px)</label>
+          <input type="number" id="border-width" name="border-width" value="1" class="inputnumber">
+        </div>
+      </div>
+        <div class="option-family-head-style" style="flex-grow: 1">        <div class="form-group">
+          <label for="border-style">Border Style</label>
+          <select id="border-style" name="border-style">
+            <option value="solid">Solid</option>
+            <option value="dashed">Dashed</option>
+            <option value="dotted">Dotted</option>
+            <option value="double">Double</option>
+            <option value="groove">Groove</option>
+            <option value="ridge">Ridge</option>
+            <option value="inset">Inset</option>
+            <option value="outset">Outset</option>
+          </select>
+        </div></div>
+    </div>
+        <div class="option-family-head-style">        <div class="form-group">
+          <label for="borderRadius">border radius(%)</label>
+          <input type="range" min="0" max="100" id="borderRadius" name="borderRadius" value="0"onclick="updatePreview()" >
+          
+        </div></div>
+        <div class="option-family-head-style">        <div class="form-group">
+          <label for="border-color">Border Color</label>
+          <input type="color" id="border-color" name="border-color" value="#000000" class="inputpalet">
+        </div>
+</div>
+     
+    </div>
+    
+
+
+
+
+
+    
+
+
+    
+
+    
+
+    
+
+
+    
+
+        
+       
+    
+        
+    </div>
+<!-- OUTPUT-APP -->
+<div id="output-app"style="flex-grow: 1">
+  <div id="canvas"> 
+    <div id="preview"  contenteditable="true">text</div>
+  </div>
+  <div id = copy_container>
+    <div id="css-output"></div>
+      <!-- <button onclick="copyToClipBoard()" class="button-85">
+          <span>Copy to clipboard</span>
+      </button> -->
+
+        
+       
+      </div>
+
+  </div>        
+  </div>
+    
+  </div>
+
+
+
+ 
       
  
-<div id="canvas"> <div id="preview" contenteditable="true">text</div></div>
-<div id = copy_container>
-    <button onclick="copyToClipBoard()">
-        <span>Copy to clipboard</span>
-    </button>
-  <div id="css-output"></div>
-</div>
-  <script src="to_js.js"></script>
+
+
+
+  <script src="to_js.js"></script>` 
+
 </body>
 </html>

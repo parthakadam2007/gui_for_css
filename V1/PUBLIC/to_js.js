@@ -19,6 +19,7 @@ setInterval(function updatePreview() {
   const fontFamily = document.getElementById("fontslist").value;
   const heightSize = document.getElementById('height-size').value;
   const widthSize = document.getElementById('width-size').value;
+  const textValue= document.getElementById
   //oppitional
 
   // PREVIEW CSS
@@ -53,29 +54,30 @@ setInterval(function updatePreview() {
   //plane CSS
   let cssOutput = 
   `
-  font-family : ${fontFamily};\n
-  font-size: ${fontSize}px;\n
+  font-family : ${fontFamily};
+  font-size: ${fontSize}px;
 
-  background-color: ${bgColor};\n
-  color: ${textColor};\n
+  background-color: ${bgColor};
+ color: ${textColor};
 
-  text-align: center;\n
-  vertical-align: middle;\n
+  text-align: center;
+  vertical-align: middle;
  
-  padding: ${paddingSize};\n
-  margin: ${marginSize};\n
+  padding: ${paddingSize}px;
+  margin: ${marginSize}px;
 
 
-  height: ${heightSize};\n
-  width: ${widthSize};\n
+  height: ${heightSize}px;
+  width: ${widthSize}px;
   
- border-style:${borderStyle } ;\n
-  border-width:${borderWidth};\n
-  border-radius: ${borderRadius};
+ border-style:${borderStyle } ;
+  border-width:${borderWidth}px;
+  border-radius: ${borderRadius}%;
   
   
  
   `;
+
 
   document.getElementById("css-output").textContent = cssOutput;
 
@@ -93,8 +95,8 @@ setInterval(function updatePreview() {
 
 
   let inlineCSS
-  // cssOutput = cssOutput.replace("\n", "");
-  cssOutput = cssOutput.replaceAll("\n", "");
+  cssOutput = cssOutput.replace("\n", "");
+  // cssOutput = cssOutput.replace(/(\b\d+\b)/g, '"$1"');
   cssOutput = cssOutput
   cssOutPutInline=`<button style='${cssOutput}'>text</button>`;
   console.log(bgColor)

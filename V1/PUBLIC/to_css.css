@@ -1,11 +1,17 @@
- body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
-  }
+:root{
+  --bg-lightblue: rgb(242, 246, 252);
+  --bg-gray: rgb(246, 248, 252);
+  
+  --bg-darkgray:rgb(214, 218, 223);
+  --text-gray:rgb(187, 191, 197);
+  --text-lightblue:rgb(0, 212, 240);
+
+}
+
 
   .form-group {
-    margin-bottom: 15px;
+    align-items: baseline;
+    /* margin-bottom: 15px; */
   }
 
   label {
@@ -14,10 +20,11 @@
   }
 
   input, select {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
+    /* margin-left: 50px;
+    /* width: 100%; */
+    /* padding: 8px;
+    box-sizing: border-box;  */
+    }
 
   #preview {
     /* default changing */
@@ -31,45 +38,54 @@ padding: 20px;
 box-sizing: border-box;
 border: 1px solid #ccc;
 background-color: #ffffff;
-color: #000000;
+color: var(--bg-gray);
 font-size: 16px;
 text-align: center;
   }
+  
 
   #css-output {
+    width: 500px;
     margin-top: 20px;
     padding: 10px;
-    background: #f9f9f9;
-    border: 1px solid #ccc;
+    /* background: #f9f9f9; */
+    /* border: 1px solid #ccc; */
+    box-shadow: rgba(240, 46, 85, 0.4) 5px 5px, rgba(240, 46,85, 0.3) 10px 10px, rgba(240, 46, 85, 0.2) 15px 15px, rgba(240, 46, 111, 0.1) 20px 20px, rgba(240, 46, 85, 0.05) 25px 25px;
+    
   }
-  .inputpalet{
-      background-color: rgb(73, 78, 78);
-      width: 50px;
-      height: 50px;
-      margin: 0%;
-      padding: 0%;
-      border-radius: 50%;
+  .inputpalet{      
+    margin: 0%;
+    padding: 0%;
+margin-left: 10px;
+      /* background-color: rgb(73, 78, 78); */
+      width: 215px;
+      height: 25px;
+
+      /* border-radius: 50%; */
       border-width:0 ;
   }
   .inputnumber{
-      /* background-color: rgb(73, 78, 78); */
-      width: 50px;
-      height: 50px;
+      height: 12px;
       margin: 0%;
       padding: 0%;
-      /* border-radius: 50%; */
-      /* border-width:0 ; */
-     
+      margin-left: 5px;
+      width: 50px;
+
   }
 
 
 #canvas{
+border-style: solid;
+border-width: 2px;  
+border-color: var(--bg-darkgray);
+border-radius: 10%;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 width: 500px;
-height: 20rem;
+height: 25rem;
 display: flex;
 align-items: center;
 justify-content: center;
-background-image:url('/Reference/experiment/assect/images.png') ;
-
+background-image:url('./assets/images.png') ;
 
 }
+
